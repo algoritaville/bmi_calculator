@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="./js/calc.js"></script>
+        <link rel="stylesheet" href="./css/style.css" />
+        <title>Amortization Calculator</title>
+    </head>
+    <body>
+        <form>
+            <ul class="form-style">
+                <li>
+                    <label>Principal</label>
+                    <input name="principal" id="principal" />
+                </li>
+                <li>
+                    <label>Term</label>
+                    <input name="term" id="term" />
+                </li>
+                <li>
+                    <label>Interest Rate</label>
+                    <input name="rate" id="rate" />
+                </li>
+                <li>
+                <input type="button" value="Submit" onclick="calculatePayment()" />
+                </li>
+                <br>
+                <label for="payment">Monthly Payment</label>
+                <input name="payment" id="payment" value="" />
+            </ul>
+            <div id="calculations">
+                <table id="amortizationSchedule">
+                <caption>Amortization Schedule</caption>
+                <thead>
+                    <tr>
+                    <th scope="col">Payment</th>
+                    <th scope="col">Principal Remaining</th>
+                    <th scope="col">Paid so far</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </div>
+        </form>
+        <!-- <img src="./img/payments.svg" alt=""> -->
+    </body>
+</html>
