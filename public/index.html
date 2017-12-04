@@ -4,45 +4,63 @@
         <meta charset="utf-8">
         <script type="text/javascript" src="./js/calc.js"></script>
         <link rel="stylesheet" href="./css/style.css" />
-        <title>Amortization Calculator</title>
+        <title>BMI Calculator</title>
     </head>
     <body>
-        <form>
+        <form id="form">
             <ul class="form-style">
                 <li>
-                    <label>Principal</label>
-                    <input name="principal" id="principal" />
+                    <label class="container">Male
+                        <input type="radio" checked="checked" name="sex" id="sex0" value="m" onchange="calculateMWW()">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">Female
+                        <input type="radio" name="sex" id="sex1" value="f" onchange="calculateMWW()">
+                        <span class="checkmark"></span>
+                    </label>
                 </li>
                 <li>
-                    <label>Term</label>
-                    <input name="term" id="term" />
+                    <label>Weight</label>
+                    <input name="weight" id="weight" onchange="calculateMWW()" />
                 </li>
                 <li>
-                    <label>Interest Rate</label>
-                    <input name="rate" id="rate" />
+                    <label>Triceps</label>
+                    <input name="triceps" id="triceps" onchange="calculateMWW()" />
                 </li>
                 <li>
-                <input type="button" value="Submit" onclick="calculatePayment()" />
+                    <label>Subscapula</label>
+                    <input name="subscapula" id="subscapula" onchange="calculateMWW()" />
+                </li>
+                <li id="abdominalOption">
+                    <label>Abdominal</label>
+                    <input name="abdominal" id="abdominal" onchange="calculateMWW()" />
+                </li>
+                <li>
+                <input type="button" value="Calculate" onclick="calculateMWW()" />
                 </li>
                 <br>
-                <label for="payment">Monthly Payment</label>
-                <input name="payment" id="payment" value="" />
+                <label for="mww">MWW</label>
+                <input name="mww" id="mww" value="" />
             </ul>
-            <div id="calculations">
-                <table id="amortizationSchedule">
-                <caption>Amortization Schedule</caption>
+        </form>
+        <div id="calculations"> </div>
+        <div id="schedule">
+            <table id="weightLossSchedule">
+                <caption>Weight Loss Schedule</caption>
                 <thead>
                     <tr>
-                    <th scope="col">Payment</th>
-                    <th scope="col">Principal Remaining</th>
-                    <th scope="col">Paid so far</th>
+                        <th scope="col">Week</th>
+                        <th scope="col">Weight</th>
+                        <th scope="col">Weight Lost</th>
+                        <th scope="col">Percent Lost</th>
                     </tr>
                 </thead>
                 <tbody>
 
                 </tbody>
-            </div>
-        </form>
+            </table>
+        </div>
+
         <!-- <img src="./img/payments.svg" alt=""> -->
     </body>
 </html>
