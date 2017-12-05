@@ -44,8 +44,9 @@ function calculateMWW() {
                         "</li>" +
                         "</ul>"
 
-    let weightLossSchedule = document.getElementById("weightLossSchedule").getElementsByTagName("tbody")[0]
-    weightLossSchedule.innerHTML = ""
+    let weightLossSchedule = document.getElementById("weightLossSchedule")
+    let schedule = document.getElementById("weightLossSchedule").getElementsByTagName("tbody")[0]
+    schedule.innerHTML = ""
     let w, x, y, z
     let currentWeight = +weight
     let previousWeight = currentWeight
@@ -54,14 +55,15 @@ function calculateMWW() {
     let newRow
     //console.log("Minimum Weight: " + mww + ", Current Weight: " + currentWeight)
 
-    if (weight > mww && weight - mww < 100) {
+    if (weight > mww && weight - mww < 150) {
+        weightLossSchedule.style.display = "block"
         while (currentWeight > mww) {
             //console.log(weightLossSchedule)
             currentWeight -= weight * 0.015
             i++
             percentLost = (previousWeight - currentWeight) / previousWeight * 100
 
-            newRow = weightLossSchedule.insertRow(weightLossSchedule.rows.length)
+            newRow = schedule.insertRow(schedule.rows.length)
             w = newRow.insertCell(0)
             w.innerHTML = i
             x = newRow.insertCell(1)
