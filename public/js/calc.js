@@ -59,6 +59,8 @@ function calculateMWW() {
             //console.log(weightLossSchedule)
             currentWeight -= weight * 0.015
             i++
+            percentLost = (previousWeight - currentWeight) / previousWeight * 100
+
             newRow = weightLossSchedule.insertRow(weightLossSchedule.rows.length)
             w = newRow.insertCell(0)
             w.innerHTML = i
@@ -69,7 +71,6 @@ function calculateMWW() {
             z = newRow.insertCell(3)
             z.innerHTML = percentLost.toFixed(2)
 
-            percentLost = (previousWeight - currentWeight) / previousWeight * 100
             previousWeight = currentWeight
         }
     }
